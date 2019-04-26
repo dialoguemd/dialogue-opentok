@@ -28,17 +28,15 @@ with codecs.open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
 
 install_requires = [
+    'enum34  ; python_version < "3.4"',
     'requests',
     'six',
     'pytz',
     'python-jose'
 ]
 
-if sys.version_info[0] < 3 or sys.version_info[1] < 4:
-    install_requires.append('enum34')
-
 setup(
-    name = 'opentok',
+    name = 'dialogue-opentok',
     version = find_version('opentok', 'version.py'),
     description = 'OpenTok server-side SDK',
     long_description=long_description,
